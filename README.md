@@ -2,3 +2,5 @@
 
 
 ### Зависимости : `npm install`
+
+### Запуск : `npm run dev`

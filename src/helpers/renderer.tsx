@@ -1,10 +1,16 @@
+import { Request } from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
+import { StaticRouter } from 'react-router-dom';
 
-import { Home } from 'client/Components/Home';
+import Router from 'client/router';
 
-export const renderer = (): string => {
-  const content = renderToString(<Home />);
+export const renderer = (req: Request): string => {
+  const content = renderToString(
+    <StaticRouter location={req.path} context={{}}>
+      <Router />
+    </StaticRouter>
+  );
 
   return (`
     <html>

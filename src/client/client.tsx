@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 
-import { Home } from 'client/Components/Home';
+import Router from './router';
 
 ReactDOM.hydrate(
-  <Home />,
+  <BrowserRouter>
+    <Router />
+  </BrowserRouter>,
   document.getElementById('root'),
 );
 
